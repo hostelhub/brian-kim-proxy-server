@@ -8,7 +8,7 @@ app.use('/hostels/:hostelId', express.static(path.join(__dirname, '../public')))
 
 app.get('/api/hostels/:hostelId', (req, res) => {
   const Id = req.params.hostelId;
-  axios.get(`http://localhost:3001/api/hostels/${Id}`)
+  axios.get(`http://localhost:3002/api/hostels/${Id}`)
     .then(hostels => (res.status(200).send(hostels.data)))
     .catch(err => console.log(err))
 });
